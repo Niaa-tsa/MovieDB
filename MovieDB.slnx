@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Movie.Application/MovieDB.Service.csproj" />
+  <Project Path="MovieDB.Console/MovieDB.Presentation.csproj" />
+  <Project Path="MovieDB.Domain/MovieDB.Domain.csproj" />
+  <Project Path="MovieDB.Infrastructure/MovieDB.Infrastructure.csproj" />
+</Solution>
