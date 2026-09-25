@@ -49,5 +49,21 @@ namespace MovieDB.Infrastructure.Services
 
             await _repo.AddAsync(movie);
         }
+        public async Task UpdateAsync(UpdateMovieDTO dto)
+        {
+            var movie = await _repo.GetByIdAsync(dto.Id)
+                ?? throw new Exception("Movie not found");
+
+            movie.Title = dto.Title;
+            movie.ReleaseYear = dto.ReleaseYear;
+            movie.StudioId = dto.StudioId;
+
+            await _repo.UpdateAsync(movie);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            await _repo.DeleteAsync(id);
+        }
     }
 }

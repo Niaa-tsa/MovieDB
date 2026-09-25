@@ -26,5 +26,21 @@ namespace MovieDB.Infrastructure.Repositories
             await _context.Movies.AddAsync(movie);
             await _context.SaveChangesAsync();
         }
+
+        public async Task UpdateAsync(Movie movie)
+        {
+            _context.Movies.Update(movie);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var movie = await _context.Movies.FindAsync(id);
+            if (movie == null)
+                throw new Exception("Movie not found");
+
+            _context.Movies.Remove(movie);
+            await _context.SaveChangesAsync();
+        }
     }
 }

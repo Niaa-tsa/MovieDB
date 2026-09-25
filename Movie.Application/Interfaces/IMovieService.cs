@@ -9,5 +9,8 @@ namespace MovieDB.Service.Interfaces
         Task<List<MovieDTO>> GetAllAsync();
         Task<MovieDTO> GetByIdAsync(int id);
         Task AddAsync(CreateMovieDTO dto);
+
+        Task UpdateAsync(UpdateMovieDTO dto); 
+        Task DeleteAsync(int id);
     }
 }

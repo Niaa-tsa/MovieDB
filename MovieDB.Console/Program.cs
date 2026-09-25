@@ -39,3 +39,14 @@ foreach (var m in movies)
 {
     Console.WriteLine($"{m.Title} - {m.StudioName}");
 }
+// UPDATE
+await service.UpdateAsync(new UpdateMovieDTO
+{
+    Id = 1,
+    Title = "Interstellar Updated",
+    ReleaseYear = 2015,
+    StudioId = 1
+});
+
+// DELETE
+await service.DeleteAsync(1);
