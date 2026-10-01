@@ -12,5 +12,6 @@ namespace MovieDB.Service.Interfaces
 
         Task UpdateAsync(UpdateMovieDTO dto); 
         Task DeleteAsync(int id);
+        Task<List<MovieDTO>> SearchByStudioAsync(int year, string studioName, int minActors);
     }
 }

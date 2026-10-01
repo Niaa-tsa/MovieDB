@@ -50,3 +50,10 @@ await service.UpdateAsync(new UpdateMovieDTO
 
 // DELETE
 await service.DeleteAsync(1);
+
+var result = await service.SearchByStudioAsync(2010, "Warner Bros", 2);
+
+foreach (var m in result)
+{
+    Console.WriteLine($"{m.Title} - {m.StudioName}");
+}

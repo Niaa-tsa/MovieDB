@@ -65,5 +65,16 @@ namespace MovieDB.Infrastructure.Services
         {
             await _repo.DeleteAsync(id);
         }
+        public async Task<List<MovieDTO>> SearchByStudioAsync(int year, string studioName, int minActors)
+        {
+            var movies = await _repo.SearchMoviesByStudioAsync(year, studioName, minActors);
+
+            return movies.Select(m => new MovieDTO
+            {
+                Title = m.Title,
+                ReleaseYear = m.ReleaseYear,
+                StudioName = m.Studio.Name
+            }).ToList();
+        }
     }
 }
